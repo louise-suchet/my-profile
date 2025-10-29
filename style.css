@@ -1,0 +1,236 @@
+
+
+
+
+  <style>
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: rgb(251, 244, 235);   /* champagne */
+  color: rgb(51, 51, 51);           /* ink */
+}
+
+/* Conteneur global */
+.container {
+  max-width: 900px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Divs générales */
+.section {
+  background: rgb(251, 217, 229);          /* blush */
+  border-radius: 20px;
+  padding: 40px 20px;
+  margin: 40px auto;
+  box-shadow: 0 8px 20px rgba(196, 54, 112, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(196, 54, 112, 0.2);
+}
+
+/* Polices */
+h1, p {
+  font-family: "Delius Unicase", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+h2 {
+  font-family: "Limelight", Georgia, "Times New Roman", serif;
+}
+
+/* Titres */
+h1 {
+  font-weight: 700;
+  font-size: 42px;
+  margin: 24px 0 10px;
+  color: rgb(196, 54, 112);
+}
+h2 {
+  font-size: 28px;
+  margin: 28px 0 12px;
+  color: rgb(196, 54, 112);
+  letter-spacing: .2px;
+  position: relative;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 6px;
+  margin: 8px auto 0;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    rgb(242, 131, 175),
+    rgb(243, 204, 151)
+  );
+}
+
+/* Paragraphes */
+p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+/* Liens */
+a {
+  color: rgb(196, 54, 112);
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(242, 131, 175);
+}
+
+/* Photo de profil ronde */
+.profile {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+  margin: 10px auto 24px;
+  border: 5px solid rgb(251, 217, 229);
+  box-shadow: 0 10px 28px rgba(196, 54, 112, .15);
+}
+
+/* Autres images (Gigi, Tequila, Vodka) */
+.photo-rounded {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  border: 4px solid rgb(243, 204, 151);
+  margin: 10px;
+  box-shadow: 0 6px 18px rgba(196, 54, 112, .1);
+}
+
+/* Galerie de nourriture : 3 photos sur la même ligne */
+.food-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  overflow-x: auto; /* pour mobile */
+  padding-bottom: 10px;
+}
+
+/* Réseaux sociaux */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+ul li a {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgb(251, 217, 229);
+  border: 2px solid transparent;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+ul li a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(242, 131, 175, .25);
+  border-color: rgb(242, 131, 175);
+}
+ul li i {
+  font-size: 28px;
+  color: rgb(196, 54, 112);
+  transition: color .2s;
+}
+ul li a:hover i {
+  color: rgb(242, 131, 175);
+}
+
+
+/* === Bloc de vote === */
+.vote {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.vote-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.vote-buttons button {
+  background: rgb(251, 217, 229);
+  border: 2px solid rgb(243, 204, 151);
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-family: "Delius Unicase", sans-serif;
+  font-size: 18px;
+  color: rgb(196, 54, 112);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vote-buttons button:hover {
+  background: rgb(242, 131, 175);
+  color: white;
+  transform: scale(1.05);
+}
+
+.vote-result {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(196, 54, 112);
+  margin-top: 10px;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Tablettes (jusqu’à 992px) --- */
+@media (max-width: 992px) {
+  .container {
+    width: 80%; /* au lieu d'une largeur fixe */
+  }
+}
+
+/* --- Mobiles (jusqu’à 600px) --- */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .photo-rounded, .profile {
+    width: 160px;
+    height: 160px;
+  }
+}
+</style>

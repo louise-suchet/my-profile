@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Louise Suchet's Profile</title>
+  <meta name="description" content="This is the Profile of Louise">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&family=Limelight&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Intro -->
+    <div class="section intro">
+      <h1>Hi ! It's Louise 🎀🤠</h1>
+      <img src="images/pp.jpg" alt="Louise Suchet PP" class="profile">
+      <p>You can discover my life and hobbies on this website 🥳</p>
+    </div>
+
+    <!-- Gigi -->
+    <div class="section dog">
+      <h2>My dog : Gigi</h2>
+      <p>She's the cutest french Bulldog on Earth... You can try to pet her ! 🐾</p>
+      <img src="images/gigi.jpg" alt="Photo of Gigi the dog" class="photo-rounded">
+    </div>
+
+    <!-- Food (3 images sur la même ligne) -->
+    <div class="section food">
+      <h2>My love for food</h2>
+      <p>I like trying new restaurants, but I'm also a very good chef 👩🏽‍🍳</p>
+      <div class="food-gallery">
+        <img src="images/food1.JPG" alt="Food photo 1" class="photo-rounded">
+        <img src="images/food2.JPG" alt="Food photo 2" class="photo-rounded">
+        <img src="images/food3.JPG" alt="Food photo 3" class="photo-rounded">
+      </div>
+    </div>
+
+   <div class="section tequila">
+  <h2>Tequila or vodka ?</h2>
+  <p>I'm a future bartender 🍸</p>
+  <img src="images/tequila.jpg" alt="Photo of a Tequila cocktail" class="photo-rounded">
+
+  <!-- Vote inside Tequila -->
+  <div class="vote">
+    <div class="vote-buttons">
+      <button id="vote-tequila">Tequila</button>
+      <button id="vote-vodka">Vodka</button>
+    </div>
+
+    <!-- ✅ manquait cet élément -->
+    <p id="vote-result" class="vote-result"></p>
+  </div>
+</div>
+
+  
+
+    <!-- Réseaux sociaux -->
+    <div class="section socials">
+      <h2>Follow Me</h2>
+      <ul>
+        <li>
+          <a href="https://www.instagram.com/louise.sb/" target="_blank">
+            <i class="fa-brands fa-square-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/louise.bouquetsuchet" target="_blank">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/louise-suchet-75151a323/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script>
+  // Récupère les éléments
+  const tequilaBtn = document.getElementById('vote-tequila');
+  const vodkaBtn = document.getElementById('vote-vodka');
+  const resultText = document.getElementById('vote-result');
+
+  // Ajoute les réactions au clic
+  tequilaBtn.addEventListener('click', () => {
+    resultText.textContent = "Yes, it's the best! 😻 ";
+    resultText.style.color = 'rgb(242, 131, 175)'; // rose
+  });
+
+  vodkaBtn.addEventListener('click', () => {
+    resultText.textContent = "We can't be friends... ";
+    resultText.style.color = 'rgb(196, 54, 112)'; // framboise
+  });
+</script>
+</body>
+</html>
+
+
